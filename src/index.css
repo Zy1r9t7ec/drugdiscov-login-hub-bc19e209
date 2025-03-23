@@ -127,7 +127,7 @@
 
   /* Glowing text effect */
   .text-glow {
-    text-shadow: 0 0 10px rgba(66, 165, 245, 0.8), 0 0 20px rgba(66, 165, 245, 0.6), 0 0 30px rgba(66, 165, 245, 0.4);
+    text-shadow: 0 0 5px rgba(66, 165, 245, 0.6), 0 0 10px rgba(66, 165, 245, 0.4), 0 0 15px rgba(66, 165, 245, 0.2);
   }
 
   /* Typewriter animation for slogan */
