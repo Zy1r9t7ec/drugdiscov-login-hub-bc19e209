@@ -65,16 +65,6 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-drugdiscov-dark text-foreground font-sans antialiased;
-  }
-}
-
 @layer utilities {
   .glass-card {
     @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
@@ -133,5 +123,10 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  /* Glowing text effect */
+  .text-glow {
+    text-shadow: 0 0 10px rgba(66, 165, 245, 0.8), 0 0 20px rgba(66, 165, 245, 0.6), 0 0 30px rgba(66, 165, 245, 0.4);
   }
 }
