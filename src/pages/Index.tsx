@@ -22,7 +22,7 @@ const Index: React.FC = () => {
           </div>
           
           {/* Dark overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-drugdiscov-dark/70 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-black z-10"></div>
           
           <div className="relative z-20 max-w-lg">
             <h1 className="text-white text-4xl lg:text-5xl font-bold mb-4 leading-tight">
