@@ -34,9 +34,9 @@ const Index: React.FC = () => {
         </div>
         
         {/* Right section - Login form */}
-        <div className="flex flex-col justify-center items-center p-6 md:p-0 min-h-screen bg-gradient-to-br from-gray-900 to-black">
-          <LoginForm />
-        </div>
+        <div className="flex flex-col justify-center items-center p-6 md:p-0 min-h-screen bg-gradient-to-br from-gray-800 to-black">
+  <LoginForm />
+</div>
       </main>
       
       <Footer />
