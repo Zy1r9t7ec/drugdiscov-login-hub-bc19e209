@@ -27,16 +27,16 @@ const Index: React.FC = () => {
               <span className="block mb-6 text-logo-blue text-5xl lg:text-6xl">DrugDiscov</span>
               <span className="block text-gradient text-glow text-4xl lg:text-5xl">The Ai powered Drug discovery</span>
             </h1>
-            <p className="text-blue-200/70 text-lg mb-8">
-  Accelerate drug discovery with AI-driven molecule generation
-</p>
+            <p className="text-white/70 text-lg mb-8">
+              Accelerate drug discovery with AI-driven molecule generation
+            </p>
           </div>
         </div>
         
         {/* Right section - Login form */}
         <div className="flex flex-col justify-center items-center p-6 md:p-0 min-h-screen bg-gradient-to-br from-gray-800 to-black">
-  <LoginForm />
-</div>
+          <LoginForm />
+        </div>
       </main>
       
       <Footer />
