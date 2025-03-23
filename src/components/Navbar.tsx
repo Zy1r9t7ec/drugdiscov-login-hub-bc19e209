@@ -14,8 +14,8 @@ const Navbar: React.FC = () => {
         </a>
         <Button 
           className={cn(
-            "bg-blue-500 text-white border border-blue-400/50",
-            "hover:bg-blue-600 hover:shadow-glow",
+            "bg-gradient-blue text-white border border-blue-400/50",
+            "hover:bg-gradient-blue-dark hover:shadow-glow",
             "transition-all duration-300"
           )}
         >
