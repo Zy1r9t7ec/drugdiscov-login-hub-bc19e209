@@ -32,25 +32,6 @@ const Index: React.FC = () => {
             <p className="text-white/90 text-lg mb-8">
               Accelerate drug discovery with AI-driven molecule generation
             </p>
-            
-            {/* Molecule visualization */}
-            <div className="relative flex items-center justify-center">
-              <div className="grid grid-cols-3 gap-6">
-                {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <div 
-                    key={i} 
-                    className={`w-16 h-16 md:w-20 md:h-20 rounded-lg bg-drugdiscov-blue/20 backdrop-blur-sm 
-                              border border-drugdiscov-blue/30 flex items-center justify-center
-                              transform hover:scale-110 transition-transform duration-300
-                              ${i % 2 === 0 ? 'animate-pulse-subtle' : ''}`}
-                  >
-                    <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full 
-                                  ${i % 3 === 0 ? 'bg-drugdiscov-blue/40' : 'bg-white/10'}`}>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
         
