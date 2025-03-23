@@ -132,10 +132,10 @@
 
   /* Solid blue color for DrugDiscov to match logo */
   .text-logo-blue {
-    color: #4da8ff !important;
-    -webkit-background-clip: initial !important;
-    background-clip: initial !important;
-  }
+  color: #4da8ff !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
   
   /* Typewriter animation for slogan */
   .animate-typewriter {
