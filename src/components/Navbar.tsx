@@ -1,34 +1,26 @@
-
 import React from 'react';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="w-full bg-drugdiscov-grey py-4 px-6 md:px-12 flex items-center justify-between animate-fade-in">
-      <div className="flex items-center">
-        <h1 className="text-white text-xl md:text-2xl font-semibold">
-          <span className="text-drugdiscov-blue">Drug</span>Discov
-        </h1>
+    <nav className="flex items-center justify-between p-4 bg-gray-900">
+      <div className="text-2xl font-bold text-blue-500">
+        DrugDiscov
       </div>
-      
-      <div className="flex items-center space-x-6">
-        <a 
-          href="#" 
-          className="text-white hover:text-drugdiscov-blue transition-colors duration-300 text-sm md:text-base hidden sm:inline-block"
-        >
+      <div className="flex items-center gap-3">
+        <a href="#" className="text-white hover:text-blue-400">
           Sign up
         </a>
-        <a 
-          href="#" 
+        <Button 
           className={cn(
-            "px-4 py-2 rounded-md transition-all duration-300",
-            "bg-drugdiscov-blue text-white font-medium",
-            "hover:bg-opacity-90 hover:shadow-lg",
-            "text-sm md:text-base"
+            "bg-blue-500 text-white border border-blue-400/50",
+            "hover:bg-blue-600 hover:shadow-glow",
+            "transition-all duration-300"
           )}
         >
           Login
-        </a>
+        </Button>
       </div>
     </nav>
   );
