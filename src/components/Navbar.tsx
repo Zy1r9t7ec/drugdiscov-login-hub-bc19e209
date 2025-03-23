@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="flex items-center justify-between p-4 bg-gray-900">
+    <nav className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 to-black">
       <div className="text-2xl font-bold text-blue-500">
         DrugDiscov
       </div>
@@ -14,8 +14,8 @@ const Navbar: React.FC = () => {
         </a>
         <Button 
           className={cn(
-            "bg-gradient-blue text-white border border-blue-400/50",
-            "hover:bg-gradient-blue-dark hover:shadow-glow",
+            "bg-blue-500 text-white border border-blue-400/50",
+            "hover:bg-blue-600 hover:shadow-glow",
             "transition-all duration-300"
           )}
         >
