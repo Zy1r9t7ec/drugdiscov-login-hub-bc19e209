@@ -136,7 +136,7 @@
     -webkit-background-clip: initial !important;
     background-clip: initial !important;
   }
-}
+  
   /* Typewriter animation for slogan */
   .animate-typewriter {
     display: inline-block;
