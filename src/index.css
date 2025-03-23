@@ -130,6 +130,11 @@
     text-shadow: 0 0 5px rgba(66, 165, 245, 0.6), 0 0 10px rgba(66, 165, 245, 0.4), 0 0 15px rgba(66, 165, 245, 0.2);
   }
 
+  /* Solid blue color for DrugDiscov to match logo */
+  .text-logo-blue {
+    color: #4da8ff;
+  }
+
   /* Typewriter animation for slogan */
   .animate-typewriter {
     display: inline-block;
