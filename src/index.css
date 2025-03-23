@@ -110,4 +110,20 @@
   .shadow-glow {
     box-shadow: 0 0 15px rgba(66, 165, 245, 0.5); /* Blue #42a5f5 glow */
   }
+
+  /* Fade-in animation for images */
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
