@@ -25,8 +25,8 @@ const Index: React.FC = () => {
   <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-black z-10"></div>
   <div className="relative z-20 max-w-lg">
     <h1 className="text-gradient text-glow text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-  <span className="block mb-2">DrugDiscov</span>
-  <span className="block">The AI powered Drug discovery</span>
+  <span className="block mb-2 text-logo-blue">DrugDiscov</span>
+  <span className="block text-gradient text-glow">The AI powered Drug discovery</span>
 </h1>
     <p className="text-white/90 text-lg mb-8">
       Accelerate drug discovery with AI-driven molecule generation
