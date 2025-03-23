@@ -131,21 +131,21 @@
 
   /* Solid blue color for DrugDiscov to match logo */
   .text-logo-blue {
-  color: #42a5f5 !important; /* Match the logo's blue */
-  -webkit-background-clip: initial !important;
-  background-clip: initial !important;
-}
+    color: #42a5f5 !important; /* Match the logo's blue */
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+  }
 
-.text-gradient {
-  background: linear-gradient(to right, #42a5f5, #1e88e5);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+  .text-gradient {
+    background: linear-gradient(to right, #42a5f5, #4b5e7d); /* Experiment: Blue to dark blue-gray */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
-.text-glow {
-  text-shadow: 0 0 5px rgba(66, 165, 245, 0.6), 0 0 10px rgba(66, 165, 245, 0.4), 0 0 15px rgba(66, 165, 245, 0.2);
-}
+  .text-glow {
+    text-shadow: 0 0 5px rgba(66, 165, 245, 0.6), 0 0 10px rgba(66, 165, 245, 0.4), 0 0 15px rgba(66, 165, 245, 0.2);
+  }
   /* Typewriter animation for slogan */
   .animate-typewriter {
     display: inline-block;
