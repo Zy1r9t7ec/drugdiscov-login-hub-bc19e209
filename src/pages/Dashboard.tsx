@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Flask, Search, ArrowRight } from 'lucide-react';
+import { Beaker, Search, ArrowRight } from 'lucide-react';
 
 // Dashboard for DrugDiscov: Displays user projects, molecule generator with enhanced AI features
 // (stereochemistry, fingerprints, ADMET, binding affinity), and AI model insights.
@@ -54,7 +54,7 @@ const Dashboard: React.FC = () => {
               )}
               aria-label="Generate a new molecule"
             >
-              <Flask size={18} />
+              <Beaker size={18} />
               Generate New Molecule
             </Button>
           </CardContent>
@@ -158,7 +158,7 @@ const Dashboard: React.FC = () => {
                   "text-white font-medium py-2 px-4 rounded-lg flex items-center gap-2"
                 )}
               >
-                <Flask size={18} />
+                <Beaker size={18} />
                 Generate Molecule
               </Button>
             </form>

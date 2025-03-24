@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { 
   Home, 
   Folder, 
-  Flask, 
+  Beaker, 
   BarChart2, 
   Settings,
   LogOut,
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
             Projects
           </Link>
           <Link to="/molecule-generator" className="text-white hover:text-blue-400 text-sm font-medium flex items-center gap-2">
-            <Flask size={16} />
+            <Beaker size={16} />
             Molecule Generator
           </Link>
           <Link to="/analytics" className="text-white hover:text-blue-400 text-sm font-medium flex items-center gap-2">
