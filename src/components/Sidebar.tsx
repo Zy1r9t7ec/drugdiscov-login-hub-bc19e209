@@ -3,9 +3,11 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, Folder, Beaker, BarChart2, Settings } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Sidebar: React.FC = () => {
   const location = useLocation();
+  const isMobile = useIsMobile();
   
   const navItems = [
     { icon: Home, label: 'Dashboard', path: '/dashboard' },
@@ -24,8 +26,8 @@ const Sidebar: React.FC = () => {
           className={cn(
             "flex items-center gap-3 px-4 py-3 rounded-lg mb-1 transition-colors",
             location.pathname === item.path
-              ? "bg-blue-900/50 text-blue-400"
-              : "text-gray-300 hover:bg-gray-800 hover:text-white"
+              ? "bg-blue-600 text-white"
+              : "text-blue-400 hover:bg-gray-800 hover:text-white"
           )}
         >
           <item.icon size={20} />
