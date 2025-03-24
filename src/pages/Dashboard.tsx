@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 
 // Dashboard for DrugDiscov: Displays user projects, molecule generator with enhanced AI features
 // (stereochemistry, fingerprints, ADMET, binding affinity), and AI model insights.
