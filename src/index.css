@@ -1,3 +1,4 @@
+
 @layer utilities {
   .glass-card {
     @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
@@ -84,8 +85,17 @@
     background: linear-gradient(to right, #42a5f5, #1e88e5);
   }
 
-  .hover\:bg-gradient-blue-dark {
+  .hover\:bg-gradient-blue-dark:hover {
     background: linear-gradient(to right, #1e88e5, #1565c0); /* Darker gradient on hover */
+  }
+
+  /* Reduce animations for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fadeIn, .animate-typewriter, .hover\:scale-105:hover {
+      animation: none;
+      transition: none;
+      transform: none;
+    }
   }
 
   @keyframes typing {
