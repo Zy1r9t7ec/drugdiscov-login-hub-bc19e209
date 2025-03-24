@@ -30,8 +30,9 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="flex items-center justify-between px-6 py-4 bg-gray-900">
-      <Link to="/dashboard" className="text-2xl font-bold text-blue-400">
-        DrugDiscov
+      <Link to="/dashboard" className="flex items-center gap-1 text-2xl font-bold">
+        <span className="text-blue-400">Drug</span>
+        <span className="text-white">Discov</span>
       </Link>
       
       <div className="hidden lg:flex items-center space-x-8">
