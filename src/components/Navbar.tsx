@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-[#1a1f2c]">
+    <nav className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-gray-800 to-black">
       <Link to="/dashboard" className="flex items-center gap-1 text-2xl font-bold">
         <span className="text-blue-400">Drug</span>
         <span className="text-white">Discov</span>
