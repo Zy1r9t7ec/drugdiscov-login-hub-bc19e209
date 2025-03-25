@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 
 const Index: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-[#1a202c]">
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-800 to-black">
       <div className="flex flex-1">
         {/* Left section - Visible only on md screens and above */}
         <div className="hidden lg:flex flex-col justify-center p-12 flex-1 relative">
@@ -35,7 +35,7 @@ const Index: React.FC = () => {
         </div>
         
         {/* Right section - Login form */}
-        <div className="flex flex-col justify-center items-center p-6 md:p-0 flex-1 bg-[#1a202c]">
+        <div className="flex flex-col justify-center items-center p-6 md:p-0 flex-1 bg-gradient-to-b from-gray-800 to-black">
           <div className="mb-8 block lg:hidden">
             <span className="flex text-4xl font-bold">
               <span className="text-blue-400">Drug</span>

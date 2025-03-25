@@ -18,7 +18,7 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div className="w-64 bg-[#1a202c] min-h-screen flex flex-col py-6 px-4">
+    <div className="w-64 bg-gradient-to-b from-gray-800 to-black min-h-screen flex flex-col py-6 px-4">
       <div className="mb-8 px-4">
         <Link to="/dashboard" className="flex items-center text-2xl font-bold">
           <span className="text-blue-400">Drug</span>
