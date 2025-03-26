@@ -5,3 +5,4 @@ export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 export { Checkbox } from "./checkbox";
 export { Label } from "./label";
 export { Alert, AlertTitle, AlertDescription } from "./alert";
+export { Avatar, AvatarImage, AvatarFallback } from "./avatar";
