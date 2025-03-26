@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Folder, Plus } from 'lucide-react';
+import { Folder, Plus, FileText, EyeIcon } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const navigate = useNavigate();
@@ -71,15 +71,17 @@ const Projects: React.FC = () => {
                   <Button 
                     variant="outline" 
                     className="text-blue-400 border-blue-400 hover:bg-blue-900/20 flex-1" 
-                    onClick={() => navigate(`/projects/${project.id}`)}
+                    onClick={() => navigate(`/projects/${project.id}/report`)}
                   >
-                    View Details
+                    <FileText size={16} className="mr-2" />
+                    View Report
                   </Button>
                   <Button 
                     className="bg-blue-500 hover:bg-blue-600 text-white flex-1" 
-                    onClick={() => navigate(`/projects/${project.id}/molecule-optimization`)}
+                    onClick={() => navigate(`/projects/${project.id}/molecule-preview`)}
                   >
-                    Generate Molecule
+                    <EyeIcon size={16} className="mr-2" />
+                    Molecule Preview
                   </Button>
                 </div>
               </div>

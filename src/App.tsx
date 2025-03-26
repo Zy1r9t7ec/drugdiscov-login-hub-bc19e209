@@ -9,6 +9,8 @@ import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
 import MoleculeGenerator from "./pages/MoleculeGenerator";
 import MoleculeOptimization from "./pages/MoleculeOptimization";
+import MoleculePreview from "./pages/MoleculePreview";
+import ProjectReport from "./pages/ProjectReport";
 import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 import Signup from "./pages/Signup";
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:projectId/molecule-optimization" element={<MoleculeOptimization />} />
+          <Route path="/projects/:projectId/molecule-preview" element={<MoleculePreview />} />
+          <Route path="/projects/:projectId/report" element={<ProjectReport />} />
           <Route path="/molecule-generator" element={<MoleculeGenerator />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/settings" element={<Settings />} />

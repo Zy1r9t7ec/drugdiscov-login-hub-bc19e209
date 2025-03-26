@@ -54,7 +54,6 @@ const MoleculeOptimization: React.FC = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   
-  // States
   const [project, setProject] = useState<Project | null>(null);
   const [selectedMolecule, setSelectedMolecule] = useState<number | null>(null);
   const [mode, setMode] = useState<'optimize' | 'generate'>('optimize');
@@ -65,7 +64,6 @@ const MoleculeOptimization: React.FC = () => {
   const [optimizedMolecules, setOptimizedMolecules] = useState<OptimizedMolecule[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  // Mock projects data
   const mockProjects: Project[] = [
     {
       id: 1,
@@ -123,7 +121,6 @@ const MoleculeOptimization: React.FC = () => {
     }
   ];
 
-  // Fetch project data
   useEffect(() => {
     if (projectId) {
       const foundProject = mockProjects.find(p => p.id === parseInt(projectId));
@@ -133,12 +130,10 @@ const MoleculeOptimization: React.FC = () => {
     }
   }, [projectId]);
 
-  // Handle molecule selection
   const handleMoleculeSelect = (moleculeId: number) => {
     setSelectedMolecule(moleculeId === selectedMolecule ? null : moleculeId);
   };
 
-  // Handle optimization goal selection
   const handleOptimizationGoalChange = (goal: string) => {
     setOptimizationGoals(prev => 
       prev.includes(goal) 
@@ -147,7 +142,6 @@ const MoleculeOptimization: React.FC = () => {
     );
   };
 
-  // Handle desired property selection
   const handleDesiredPropertyChange = (property: string) => {
     setDesiredProperties(prev => 
       prev.includes(property) 
@@ -156,7 +150,6 @@ const MoleculeOptimization: React.FC = () => {
     );
   };
 
-  // Generate optimized molecule
   const handleGenerateOptimizedMolecule = () => {
     if (!selectedMolecule) {
       toast({
@@ -187,17 +180,15 @@ const MoleculeOptimization: React.FC = () => {
 
     setIsLoading(true);
 
-    // Simulate API call with timeout
     setTimeout(() => {
       const selectedMoleculeData = project?.molecules.find(m => m.id === selectedMolecule);
       
       if (selectedMoleculeData) {
-        // Create mock optimized molecule
         const newMolecule: OptimizedMolecule = {
           id: Date.now(),
           smiles: mode === 'optimize' 
-            ? "CC(=O)OC1=CC=CC=C1C(=O)OCH3" // Modified SMILES for optimization
-            : "CNC(=O)C1=CC=CC=C1NC(=O)C2=CC=CC=C2", // New SMILES for complementary molecule
+            ? "CC(=O)OC1=CC=CC=C1C(=O)OCH3"
+            : "CNC(=O)C1=CC=CC=C1NC(=O)C2=CC=CC=C2",
           properties: {
             solubility: mode === 'optimize' && optimizationGoals.includes('solubility') 
               ? "High" 
@@ -242,7 +233,6 @@ const MoleculeOptimization: React.FC = () => {
     }, 2000);
   };
 
-  // Save molecule to project
   const handleSaveToProject = (moleculeId: number) => {
     toast({
       title: "Success",
@@ -250,7 +240,6 @@ const MoleculeOptimization: React.FC = () => {
     });
   };
 
-  // Regenerate molecule
   const handleRegenerate = () => {
     handleGenerateOptimizedMolecule();
   };
@@ -267,17 +256,16 @@ const MoleculeOptimization: React.FC = () => {
             <Button 
               variant="outline" 
               className="text-white" 
-              onClick={() => navigate(`/projects/${projectId}`)}
+              onClick={() => navigate('/projects')}
             >
               <ArrowLeft size={18} className="mr-2" />
-              Back to Project
+              Back to Projects
             </Button>
             <h1 className="text-white text-3xl font-bold">
               Molecule Optimization for {project?.name}
             </h1>
           </div>
           
-          {/* Existing Molecules Section */}
           <div className="mb-8">
             <h2 className="text-white text-xl font-semibold mb-4">Existing Molecules</h2>
             
@@ -324,7 +312,6 @@ const MoleculeOptimization: React.FC = () => {
             )}
           </div>
           
-          {/* Optimization Options Section */}
           <div className="mb-8">
             <h2 className="text-white text-xl font-semibold mb-4">Optimization Options</h2>
             
@@ -523,7 +510,6 @@ const MoleculeOptimization: React.FC = () => {
             </Card>
           </div>
           
-          {/* Results Section */}
           <div>
             <h2 className="text-white text-xl font-semibold mb-4">Results</h2>
             
