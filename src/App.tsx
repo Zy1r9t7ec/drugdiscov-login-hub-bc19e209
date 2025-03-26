@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
+import NewProject from "./pages/NewProject";
 import MoleculeGenerator from "./pages/MoleculeGenerator";
 import MoleculeOptimization from "./pages/MoleculeOptimization";
 import MoleculePreview from "./pages/MoleculePreview";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/new" element={<NewProject />} />
           <Route path="/projects/:projectId/molecule-optimization" element={<MoleculeOptimization />} />
           <Route path="/projects/:projectId/molecule-preview" element={<MoleculePreview />} />
           <Route path="/projects/:projectId/report" element={<ProjectReport />} />
