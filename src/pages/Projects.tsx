@@ -77,7 +77,7 @@ const Projects: React.FC = () => {
                   </Button>
                   <Button 
                     className="bg-blue-500 hover:bg-blue-600 text-white flex-1" 
-                    onClick={() => navigate(`/molecule-generator?projectId=${project.id}`)}
+                    onClick={() => navigate(`/projects/${project.id}/molecule-optimization`)}
                   >
                     Generate Molecule
                   </Button>
