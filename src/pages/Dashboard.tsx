@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
@@ -8,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Beaker, ArrowRight, Folder } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -79,35 +79,46 @@ const Dashboard: React.FC = () => {
           <h2 className="text-white text-2xl font-bold mb-4">Recent Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             {recentProjects.map(project => (
-              <div 
+              <Card 
                 key={project.id} 
-                className="bg-gray-800/50 border border-gray-700 p-5 rounded-xl"
+                className="bg-gray-800/50 border border-gray-700 overflow-hidden"
               >
-                <h3 className="text-white font-medium text-xl mb-2">{project.name}</h3>
-                <p className="text-gray-400 text-sm mb-1">Last updated: {project.lastUpdated}</p>
-                <p className={cn(
-                  "text-sm font-medium mb-4",
-                  project.status === "In Progress" ? "text-blue-400" : 
-                  project.status === "Completed" ? "text-green-400" : "text-yellow-400"
-                )}>
-                  Status: {project.status}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <Button 
-                    variant="outline" 
-                    className="text-blue-400 border-blue-400 hover:bg-blue-900/20 text-sm h-9" 
-                    onClick={() => handleViewProjectDetails(project.id)}
-                  >
-                    View Details
-                  </Button>
-                  <Button 
-                    className="bg-blue-600 hover:bg-blue-700 text-white text-sm h-9" 
-                    onClick={() => handleGenerateMoleculeForProject(project.id)}
-                  >
-                    Generate Molecule
-                  </Button>
-                </div>
-              </div>
+                <CardContent className="p-5">
+                  <div className="flex items-start gap-3 mb-3">
+                    <Folder size={22} className="text-blue-400 mt-1 flex-shrink-0" />
+                    <div className="min-w-0">
+                      <h3 className="text-white font-medium text-lg leading-tight break-words mb-1">
+                        {project.name}
+                      </h3>
+                      <p className="text-gray-400 text-xs">Last updated: {project.lastUpdated}</p>
+                    </div>
+                  </div>
+                  
+                  <p className={cn(
+                    "font-medium mb-4 text-sm",
+                    project.status === "In Progress" ? "text-blue-400" : 
+                    project.status === "Completed" ? "text-green-400" : "text-yellow-400"
+                  )}>
+                    Status: {project.status}
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <Button 
+                      variant="outline" 
+                      className="text-blue-400 border-blue-400 hover:bg-blue-900/20 text-xs h-8" 
+                      onClick={() => handleViewProjectDetails(project.id)}
+                    >
+                      View Details
+                    </Button>
+                    <Button 
+                      className="bg-blue-500 hover:bg-blue-600 text-white text-xs h-8" 
+                      onClick={() => handleGenerateMoleculeForProject(project.id)}
+                    >
+                      Generate Molecule
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
           <Button 
