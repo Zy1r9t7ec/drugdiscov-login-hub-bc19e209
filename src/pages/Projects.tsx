@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Folder, Plus, FileText, EyeIcon } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Projects: React.FC = () => {
   const navigate = useNavigate();
@@ -41,50 +42,54 @@ const Projects: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map(project => (
-              <div 
+              <Card 
                 key={project.id} 
-                className="bg-gray-800/50 border border-gray-700 p-5 rounded-xl"
+                className="bg-gray-800/50 border border-gray-700 overflow-hidden"
               >
-                <div className="flex items-start gap-3 mb-3">
-                  <Folder size={22} className="text-blue-400 mt-1" />
-                  <div>
-                    <h3 className="text-white font-medium text-xl">{project.name}</h3>
-                    <p className="text-gray-400 text-sm">Last updated: {project.lastUpdated}</p>
+                <CardContent className="p-5">
+                  <div className="flex items-start gap-3 mb-3">
+                    <Folder size={22} className="text-blue-400 mt-1 flex-shrink-0" />
+                    <div className="min-w-0"> {/* This ensures text wrapping works properly */}
+                      <h3 className="text-white font-medium text-lg leading-tight break-words mb-1">
+                        {project.name}
+                      </h3>
+                      <p className="text-gray-400 text-xs">Last updated: {project.lastUpdated}</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex justify-between mb-4">
-                  <p className={cn(
-                    "text-sm font-medium",
-                    project.status === "In Progress" ? "text-blue-400" : 
-                    project.status === "Completed" ? "text-green-400" :
-                    project.status === "On Hold" ? "text-yellow-400" : "text-gray-400"
-                  )}>
-                    Status: {project.status}
-                  </p>
-                  <p className="text-gray-400 text-sm">
-                    Molecules: {project.molecules}
-                  </p>
-                </div>
-                
-                <div className="flex gap-2">
-                  <Button 
-                    variant="outline" 
-                    className="text-blue-400 border-blue-400 hover:bg-blue-900/20 flex-1" 
-                    onClick={() => navigate(`/projects/${project.id}/report`)}
-                  >
-                    <FileText size={16} className="mr-2" />
-                    View Report
-                  </Button>
-                  <Button 
-                    className="bg-blue-500 hover:bg-blue-600 text-white flex-1" 
-                    onClick={() => navigate(`/projects/${project.id}/molecule-preview`)}
-                  >
-                    <EyeIcon size={16} className="mr-2" />
-                    Molecule Preview
-                  </Button>
-                </div>
-              </div>
+                  
+                  <div className="flex justify-between mb-4 text-sm">
+                    <p className={cn(
+                      "font-medium truncate",
+                      project.status === "In Progress" ? "text-blue-400" : 
+                      project.status === "Completed" ? "text-green-400" :
+                      project.status === "On Hold" ? "text-yellow-400" : "text-gray-400"
+                    )}>
+                      Status: {project.status}
+                    </p>
+                    <p className="text-gray-400 text-sm ml-2 flex-shrink-0">
+                      Molecules: {project.molecules}
+                    </p>
+                  </div>
+                  
+                  <div className="flex gap-2 mt-auto">
+                    <Button 
+                      variant="outline" 
+                      className="text-blue-400 border-blue-400 hover:bg-blue-900/20 flex-1 h-8 text-xs px-2" 
+                      onClick={() => navigate(`/projects/${project.id}/report`)}
+                    >
+                      <FileText size={14} className="mr-1" />
+                      View Report
+                    </Button>
+                    <Button 
+                      className="bg-blue-500 hover:bg-blue-600 text-white flex-1 h-8 text-xs px-2" 
+                      onClick={() => navigate(`/projects/${project.id}/molecule-preview`)}
+                    >
+                      <EyeIcon size={14} className="mr-1" />
+                      Molecule Preview
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </main>
