@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
@@ -43,11 +44,11 @@ const Dashboard: React.FC = () => {
   };
 
   const handleViewProjectDetails = (projectId: number) => {
-    navigate(`/projects/${projectId}`);
+    navigate(`/projects/${projectId}/report`);
   };
 
   const handleGenerateMoleculeForProject = (projectId: number) => {
-    navigate(`/molecule-generator?projectId=${projectId}`);
+    navigate(`/projects/${projectId}/molecule-preview`);
   };
   
   return (
@@ -77,41 +78,41 @@ const Dashboard: React.FC = () => {
 
           {/* Recent Projects Section */}
           <h2 className="text-white text-2xl font-bold mb-4">Recent Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
             {recentProjects.map(project => (
               <Card 
                 key={project.id} 
-                className="bg-gray-800/50 border border-gray-700 overflow-hidden"
+                className="bg-gray-800/50 border border-gray-700 overflow-hidden h-full"
               >
-                <CardContent className="p-5">
-                  <div className="flex items-start gap-3 mb-3">
-                    <Folder size={22} className="text-blue-400 mt-1 flex-shrink-0" />
-                    <div className="min-w-0">
-                      <h3 className="text-white font-medium text-lg leading-tight break-words mb-1">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <div className="flex items-start gap-3 mb-4">
+                    <Folder size={24} className="text-blue-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-white font-semibold text-xl mb-1">
                         {project.name}
                       </h3>
-                      <p className="text-gray-400 text-xs">Last updated: {project.lastUpdated}</p>
+                      <p className="text-gray-400 text-sm">Last updated: {project.lastUpdated}</p>
                     </div>
                   </div>
                   
                   <p className={cn(
-                    "font-medium mb-4 text-sm",
+                    "font-medium mb-6 text-base",
                     project.status === "In Progress" ? "text-blue-400" : 
                     project.status === "Completed" ? "text-green-400" : "text-yellow-400"
                   )}>
                     Status: {project.status}
                   </p>
                   
-                  <div className="flex flex-col sm:flex-row gap-2">
+                  <div className="flex gap-4 mt-auto">
                     <Button 
                       variant="outline" 
-                      className="text-blue-400 border-blue-400 hover:bg-blue-900/20 text-xs h-8" 
+                      className="text-blue-400 border-blue-400 hover:bg-blue-900/20 flex-1 h-10" 
                       onClick={() => handleViewProjectDetails(project.id)}
                     >
                       View Report
                     </Button>
                     <Button 
-                      className="bg-blue-500 hover:bg-blue-600 text-white text-xs h-8" 
+                      className="bg-blue-500 hover:bg-blue-600 text-white flex-1 h-10" 
                       onClick={() => handleGenerateMoleculeForProject(project.id)}
                     >
                       Molecule Preview

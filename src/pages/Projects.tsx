@@ -40,51 +40,49 @@ const Projects: React.FC = () => {
             </Button>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map(project => (
               <Card 
                 key={project.id} 
-                className="bg-gray-800/50 border border-gray-700 overflow-hidden"
+                className="bg-gray-800/50 border border-gray-700 overflow-hidden h-full"
               >
-                <CardContent className="p-5">
-                  <div className="flex items-start gap-3 mb-3">
-                    <Folder size={22} className="text-blue-400 mt-1 flex-shrink-0" />
-                    <div className="min-w-0"> {/* This ensures text wrapping works properly */}
-                      <h3 className="text-white font-medium text-lg leading-tight break-words mb-1">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <div className="flex items-start gap-3 mb-4">
+                    <Folder size={24} className="text-blue-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-white font-semibold text-xl mb-1">
                         {project.name}
                       </h3>
-                      <p className="text-gray-400 text-xs">Last updated: {project.lastUpdated}</p>
+                      <p className="text-gray-400 text-sm">Last updated: {project.lastUpdated}</p>
                     </div>
                   </div>
                   
-                  <div className="flex justify-between mb-4 text-sm">
+                  <div className="flex justify-between mb-6">
                     <p className={cn(
-                      "font-medium truncate",
+                      "font-medium text-base",
                       project.status === "In Progress" ? "text-blue-400" : 
                       project.status === "Completed" ? "text-green-400" :
                       project.status === "On Hold" ? "text-yellow-400" : "text-gray-400"
                     )}>
                       Status: {project.status}
                     </p>
-                    <p className="text-gray-400 text-sm ml-2 flex-shrink-0">
+                    <p className="text-gray-400">
                       Molecules: {project.molecules}
                     </p>
                   </div>
                   
-                  <div className="flex gap-2 mt-auto">
+                  <div className="flex gap-4 mt-auto">
                     <Button 
                       variant="outline" 
-                      className="text-blue-400 border-blue-400 hover:bg-blue-900/20 flex-1 h-8 text-xs px-2" 
+                      className="text-blue-400 border-blue-400 hover:bg-blue-900/20 flex-1 h-10" 
                       onClick={() => navigate(`/projects/${project.id}/report`)}
                     >
-                      <FileText size={14} className="mr-1" />
                       View Report
                     </Button>
                     <Button 
-                      className="bg-blue-500 hover:bg-blue-600 text-white flex-1 h-8 text-xs px-2" 
+                      className="bg-blue-500 hover:bg-blue-600 text-white flex-1 h-10" 
                       onClick={() => navigate(`/projects/${project.id}/molecule-preview`)}
                     >
-                      <EyeIcon size={14} className="mr-1" />
                       Molecule Preview
                     </Button>
                   </div>
