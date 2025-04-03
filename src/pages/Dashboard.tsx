@@ -108,13 +108,13 @@ const Dashboard: React.FC = () => {
                       className="text-blue-400 border-blue-400 hover:bg-blue-900/20 text-xs h-8" 
                       onClick={() => handleViewProjectDetails(project.id)}
                     >
-                      View Details
+                      View Report
                     </Button>
                     <Button 
                       className="bg-blue-500 hover:bg-blue-600 text-white text-xs h-8" 
                       onClick={() => handleGenerateMoleculeForProject(project.id)}
                     >
-                      Generate Molecule
+                      Molecule Preview
                     </Button>
                   </div>
                 </CardContent>
