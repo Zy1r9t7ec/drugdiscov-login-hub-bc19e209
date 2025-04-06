@@ -321,6 +321,12 @@ const ProjectReport: React.FC = () => {
     );
   }
   
+  // Fix for the first error: Parse the QED score as a number
+  const qedScore = parseFloat(report.drugLikeness.qedScore);
+  
+  // Fix for the second error: Calculate score from 1-10 as a number
+  const syntheticAccessibilityScore = report.syntheticAccessibility.scoreValue;
+  
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 relative">
       <Navbar />
@@ -582,7 +588,7 @@ const ProjectReport: React.FC = () => {
               </div>
               <div 
                 className="w-[3px] h-[15px] bg-red-500 absolute"
-                style={{ left: `${parseFloat(report.drugLikeness.qedScore) * 100}%`, marginLeft: '1rem', marginTop: '-1.8rem' }}
+                style={{ left: `${qedScore * 100}%`, marginLeft: '1rem', marginTop: '-1.8rem' }}
               ></div>
             </div>
             
@@ -994,7 +1000,7 @@ const ProjectReport: React.FC = () => {
                 <div 
                   className="absolute"
                   style={{ 
-                    left: `${(report.syntheticAccessibility.scoreValue - 1) * 10}%`,
+                    left: `${(syntheticAccessibilityScore - 1) * 10}%`,
                     top: '60px',
                     transform: 'translate(-50%, -50%)'
                   }}
