@@ -70,10 +70,11 @@ const ToxicityProfile: React.FC<ToxicityProfileProps> = ({ toxicityProfile }) =>
               <Tooltip
                 content={({ active, payload, label }) => {
                   if (active && payload && payload.length) {
+                    const value = typeof payload[0].value === 'number' ? payload[0].value : 0;
                     return (
                       <div className="bg-gray-800 p-3 border border-gray-700 rounded">
                         <p className="text-white">{`${payload[0].payload.name}`}</p>
-                        <p className="text-white">{`Confidence: ${(payload[0].value * 100).toFixed(0)}%`}</p>
+                        <p className="text-white">{`Confidence: ${(value * 100).toFixed(0)}%`}</p>
                         <p className="text-white">{`Status: ${payload[0].payload.status}`}</p>
                       </div>
                     );
